@@ -36,13 +36,13 @@ Comparativo das métricas principais entre a versão original (HTML/JS) e a vers
 
 | Métrica | Versão Original | Versão Next.js (Vercel) | Observações |
 | :--- | :---: | :---: | :--- |
-| **Performance** | 70 | **81** | Melhoria no tempo de carregamento e execução de scripts. |
-| **Acessibilidade** | 100 | **100** | Manutenção da excelente estrutura de etiquetas e navegação por teclado. |
-| **Boas Práticas** | 93 | **100** | Otimização de segurança e uso de HTTPS/HTTP2 providos pela Vercel. |
+| **Performance** | 70 | **81** | Ficou mais rápido porque o Next.js divide o código e só carrega o que a página precisa na hora.|
+| **Acessibilidade** | 100 | **100** | Manteve-se o uso correto das tags HTML , então o site continua acessível para todos. |
+| **Boas Práticas** | 93 | **100** | A nota subiu porque a Vercel configura segurança e HTTPS automaticamente, corrigindo falhas da versão antiga. |
 | **SEO** | 91 | **100** | Aumento significativo graças à semântica do Next.js e metadados dinâmicos. |
 | **LCP** | 6.7s | **3.4s** | Redução de ~50% no tempo de pintura. O uso do componente <Image> otimizou o carregamento do background, tirando a métrica da zona crítica (vermelha). |
 
-> **Conclusão:** A migração resultou em uma aplicação mais robusta,segura e com significativo aumento de performance e renderização, atingindo pontuação máxima em 3 dos 4 critérios avaliados pelo Google Lighthouse.
+> **Conclusão:** A migração resultou em uma aplicação mais robusta,segura e com significativo aumento de performance e renderização, atingindo pontuação máxima em 3 dos 4 critérios da tabela, avaliados pelo Google Lighthouse.
 Sendo assim, conclui-se que o Next/Vercel junto com práticas de renderização são essencial no aumento de performance do projeto e experiência do usuário.
 
 ---
