@@ -24,3 +24,181 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.welcome-bg {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('/img/Background.png') no-repeat center center/cover;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.welcome-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #e50914;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 34vh; 
+}
+
+.welcome-btn:hover {
+    background-color: #f40612;
+}
+
+.browse-bg {
+    background: url('/img/HomeBackground.png') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; 
+    padding-top: 12%;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+}
+
+.buttons-trailer {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-start; 
+    align-items: center;     
+    margin-top: 30vh; 
+    padding-left: 4rem;
+    box-sizing: border-box;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-play {
+    background-color: rgba(226, 19, 19, 0.7);
+    color: rgb(255, 255, 255);
+}
+
+.btn-trailer {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.carrossel {
+  margin-top: 30px;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.carrossel h2 {
+  margin-bottom: 10px;
+  padding-left: 4rem; /* Alinha com o início dos filmes */
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.carrossel-wrapper {
+  position: relative; /* Necessário para posicionar os botões (prev/next) */
+}
+
+.carrossel-container {
+  overflow-x: auto; /* Permite rolagem horizontal */
+  overflow-y: hidden;
+  scroll-behavior: smooth; /* CRUCIAL: Faz a rolagem do botão ser suave */
+  
+  /* Esconde a barra de rolagem (estética Netflix) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Esconde barra de rolagem no Chrome/Safari */
+.carrossel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.movies {
+  display: flex;
+  gap: 10px;
+  padding: 10px 4rem; /* Espaço nas laterais */
+  width: max-content; /* Garante que a div cresça conforme os filmes */
+}
+
+/* Estilizando a imagem (Next/Image renderiza como img) */
+.movies img {
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  
+  /* IMPORTANTE: Garante o tamanho fixo para não distorcer no flexbox */
+  width: 200px;
+  height: 300px; /* Ajuste a altura conforme suas imagens originais */
+  min-width: 200px; 
+}
+
+.movies img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+    z-index: 2;
+}
+
+/* --- Botões de Navegação (< e >) --- */
+
+.btn-carrossel {
+  position: absolute;
+  top: 0;
+  bottom: 0; /* Ocupa toda a altura da linha de filmes */
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10;
+  
+  /* Começa invisível e aparece no hover */
+  opacity: 0; 
+  transition: opacity 0.3s ease, background-color 0.3s;
+  
+  /* Centraliza a seta (< ou >) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-wrapper:hover .btn-carrossel {
+    opacity: 1; /* Mostra os botões quando passa o mouse na área */
+}
+
+.btn-carrossel:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.btn-carrossel.prev {
+  left: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.btn-carrossel.next {
+  right: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
