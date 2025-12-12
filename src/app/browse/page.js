@@ -1,13 +1,10 @@
-'use client'; // Indica (CSR)
+'use client'; // CSR
 
 import { useEffect, useState } from 'react';
 import MovieCarrossel from '../componentes/MovieCarrossel';
 import { useRouter } from 'next/navigation';
 
-// Simulação de busca de dados (que ocorreria no lado do cliente)
 const fetchMovies = () => {
-  // No seu projeto real, aqui você faria um 'fetch' para uma API externa.
-  // Por agora, vamos simular a estrutura dos seus carrosséis:
 
   const newThisWeek = [
     { src: 'filme1.png', alt: 'Filme 1' },
@@ -43,30 +40,22 @@ export default function BrowsePage() {
   const [moviesData, setMoviesData] = useState(null);
 
   useEffect(() => {
-    // A lógica do 'script.js' de manipulação de carrossel iria aqui.
-    // Usamos useEffect para simular o carregamento de dados *após* o componente montar (CSR).
     const data = fetchMovies();
     setMoviesData(data);
     
-    // Simulação do botão 'Play' original que ia para netflix.html.
-    // Agora, ele pode ser o botão que leva à tela do filme.
-    // O router.push('/movie/details') faria esse papel.
   }, []);
 
   if (!moviesData) {
-    // Pode colocar um estilo simples de loading aqui se quiser
-    return <div style={{color: 'white', padding: '2rem'}}>Carregando catálogo...</div>;
+    return <div style={{color: 'white', padding: '2rem'}}>Loading movies and series...</div>;
   }
 
   return (
-    // Aplicamos a classe que criamos no CSS para dar o background e padding
     <main className="browse-bg"> 
       
       <div className="buttons-trailer">
-          {/* Botão Play replicando o onclick original via router.push */}
           <button 
             className="btn btn-play" 
-            onClick={() => router.push('/movie/92023djsq9s0m29')} // Simula ir para o filme
+            onClick={() => router.push('/movie/92023djsq9s0m29')}
           >
             Play
           </button>
@@ -76,7 +65,6 @@ export default function BrowsePage() {
           </button>
       </div>
 
-      {/* Os componentes de carrossel já contêm as sections e h2 */}
       <MovieCarrossel title="New this week" movies={moviesData.newThisWeek} />
       <MovieCarrossel title="Top 10" movies={moviesData.top10} />
       

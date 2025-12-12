@@ -32,15 +32,18 @@ Conforme os requisitos do trabalho, foram implementadas diferentes estratégias 
 
 ## Análise de Performance (Lighthouse)
 
-Comparativo das métricas principais entre a versão original (HTML/JS) e a versão migrada (Next.js):
+Comparativo das métricas principais entre a versão original (HTML/JS) e a versão final migrada (Next.js na Vercel):
 
-| Métrica | Versão Original | Versão Next.js | Observações |
+| Métrica | Versão Original | Versão Next.js (Vercel) | Observações |
 | :--- | :---: | :---: | :--- |
-| **Performance** | *77* | *(Insira valor)* | Melhora devido ao uso de `<Image />` e *Code Splitting*. |
-| **LCP** | *(Insira valor)* | *(Insira valor)* | O SSG na home reduziu drasticamente o tempo de pintura. |
-| **SEO** | *82* | *(Insira valor)* | Estrutura semântica do Next.js ajudou na indexação. |
+| **Performance** | 70 | **81** | Melhoria no tempo de carregamento e execução de scripts. |
+| **Acessibilidade** | 100 | **100** | Manutenção da excelente estrutura de etiquetas e navegação por teclado. |
+| **Boas Práticas** | 93 | **100** | Otimização de segurança e uso de HTTPS/HTTP2 providos pela Vercel. |
+| **SEO** | 91 | **100** | Aumento significativo graças à semântica do Next.js e metadados dinâmicos. |
+| **LCP** | 6.7s | **3.4s** | Redução de ~50% no tempo de pintura. O uso do componente <Image> otimizou o carregamento do background, tirando a métrica da zona crítica (vermelha). |
 
-> *Nota: A otimização de imagens automática do Next.js (`next/image`) foi fundamental para reduzir o peso dos assets nos carrosséis.*
+> **Conclusão:** A migração resultou em uma aplicação mais robusta,segura e com significativo aumento de performance e renderização, atingindo pontuação máxima em 3 dos 4 critérios avaliados pelo Google Lighthouse.
+Sendo assim, conclui-se que o Next/Vercel junto com práticas de renderização são essencial no aumento de performance do projeto e experiência do usuário.
 
 ---
 

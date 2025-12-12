@@ -110,26 +110,23 @@ body {
 
 .carrossel h2 {
   margin-bottom: 10px;
-  padding-left: 4rem; /* Alinha com o início dos filmes */
+  padding-left: 4rem; 
   font-size: 1.4rem;
   font-weight: bold;
 }
 
 .carrossel-wrapper {
-  position: relative; /* Necessário para posicionar os botões (prev/next) */
+  position: relative; 
 }
 
 .carrossel-container {
-  overflow-x: auto; /* Permite rolagem horizontal */
+  overflow-x: auto; 
   overflow-y: hidden;
-  scroll-behavior: smooth; /* CRUCIAL: Faz a rolagem do botão ser suave */
-  
-  /* Esconde a barra de rolagem (estética Netflix) */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
-/* Esconde barra de rolagem no Chrome/Safari */
 .carrossel-container::-webkit-scrollbar {
   display: none;
 }
@@ -137,34 +134,31 @@ body {
 .movies {
   display: flex;
   gap: 10px;
-  padding: 10px 4rem; /* Espaço nas laterais */
-  width: max-content; /* Garante que a div cresça conforme os filmes */
+  padding: 10px 4rem; 
+  width: max-content; 
 }
 
-/* Estilizando a imagem (Next/Image renderiza como img) */
 .movies img {
   border-radius: 4px;
   cursor: pointer;
   transition: transform 0.3s ease;
   object-fit: cover;
   
-  /* IMPORTANTE: Garante o tamanho fixo para não distorcer no flexbox */
   width: 200px;
-  height: 300px; /* Ajuste a altura conforme suas imagens originais */
+  height: 300px; 
   min-width: 200px; 
 }
 
 .movies img:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.1); 
     z-index: 2;
 }
 
-/* --- Botões de Navegação (< e >) --- */
 
 .btn-carrossel {
   position: absolute;
   top: 0;
-  bottom: 0; /* Ocupa toda a altura da linha de filmes */
+  bottom: 0; 
   width: 50px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -173,18 +167,16 @@ body {
   cursor: pointer;
   z-index: 10;
   
-  /* Começa invisível e aparece no hover */
   opacity: 0; 
   transition: opacity 0.3s ease, background-color 0.3s;
   
-  /* Centraliza a seta (< ou >) */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carrossel-wrapper:hover .btn-carrossel {
-    opacity: 1; /* Mostra os botões quando passa o mouse na área */
+    opacity: 1;
 }
 
 .btn-carrossel:hover {
